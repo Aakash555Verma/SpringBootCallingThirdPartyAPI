@@ -1,5 +1,7 @@
 package org.financeData.services;
 
+import java.util.List;
+
 import org.financeData.dtos.RealTimeCashFlowData;
 import org.financeData.dtos.RealTimeCashFlowResult;
 import org.financeData.dtos.RealTimeNewsData;
@@ -13,8 +15,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.List;
 
 @Service
 public class CompanyStockService implements IStockService {
