@@ -3,6 +3,8 @@ package org.financeData.controllers;
 import org.financeData.models.News;
 import org.financeData.services.ICurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +21,7 @@ public class CurrencyController {
 
     //localhost:8080/currency_/conversionNews?from_symbol=USD&to_symbol=INR
     @GetMapping("/conversionNews")
-    public List<News> getCurrencyNews(@RequestParam(required = true) String from_symbol, @RequestParam(required = true) String to_symbol) {
-        return currencyService.getCurrencyNews(from_symbol, to_symbol);
+    public ResponseEntity<List<News>> getCurrencyNews(@RequestParam(required = true) String from_symbol, @RequestParam(required = true) String to_symbol) {
+        return new ResponseEntity<>(currencyService.getCurrencyNews(from_symbol, to_symbol), HttpStatus.OK);
     }
 }
