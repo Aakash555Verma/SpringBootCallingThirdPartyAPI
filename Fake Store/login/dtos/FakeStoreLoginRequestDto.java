@@ -1,0 +1,11 @@
+package login.dtos;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+public class FakeStoreLoginRequestDto {
+    private String username;
+    private String password;
+}

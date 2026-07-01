@@ -27,9 +27,9 @@ public class CompanyStockService implements IStockService {
 	private RestTemplateBuilder restTemplateBuilder;
 
 	@Value("${company.key}")
-	private static String key;
+	private String key;
 	@Value("${company.value}")
-	private static String value;
+	private String value;
 
 	public List<News> getStockNews(String symbol) {
 		try {

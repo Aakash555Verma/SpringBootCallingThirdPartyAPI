@@ -17,8 +17,8 @@ public class ExceptionController {
 	}
 
 	// With proper application format
-	@ExceptionHandler({ IllegalArgumentException.class, NullPointerException.class })
-	public ResponseEntity<ErrorResponse> handleBadRequestExceptions(RuntimeException ex) {
+	@ExceptionHandler({ IllegalStateException.class })
+	public ResponseEntity<ErrorResponse> handleBadRequestExceptionsWithCustomMessage(Exception ex) {
 		ErrorResponse error = new ErrorResponse(ex.getMessage(), 400);
 		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
